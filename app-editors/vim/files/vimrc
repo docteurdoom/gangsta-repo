@@ -1,0 +1,15 @@
+source $VIMRUNTIME/evim.vim
+colorscheme industry
+
+syntax enable
+filetype plugin indent on
+
+set nobackup
+set nowritebackup
+set noswapfile
+
+autocmd VimEnter * NERDTree | wincmd p
+let g:NERDTreeWinSize=21
+
+imap <C-f> <esc>/
+noremap! <C-BS> <C-left>
