@@ -75,7 +75,7 @@ BDEPEND="
 	dev-util/gtk-update-icon-cache
 	>=dev-util/intltool-0.40.1
 	>=sys-devel/gettext-0.19.8
-	>=sys-devel/libtool-2.2
+	>=deb-build/libtool-2.2
 	virtual/pkgconfig
 "
 
