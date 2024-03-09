@@ -121,9 +121,6 @@ QA_FLAGS_IGNORED="usr/lib/systemd/boot/efi/.*"
 CONFIG_CHECK="~BLK_DEV_BSG ~DEVTMPFS ~!IDE ~INOTIFY_USER ~!SYSFS_DEPRECATED
 	~!SYSFS_DEPRECATED_V2 ~SIGNALFD ~EPOLL ~FHANDLE ~NET ~UNIX"
 
-PATCHES=(
-	"${FILESDIR}"/0001-silence.patch
-)
 pkg_setup() {
 	if [[ ${MERGE_TYPE} != buildonly ]] && use udev; then
 		linux-info_pkg_setup
@@ -134,6 +131,7 @@ pkg_setup() {
 src_prepare() {
 	local PATCHES=(
 		"${FILESDIR}/${PN}-254.3-add-link-kernel-install-shared-option.patch"
+		"${FILESDIR}"/0001-silence.patch
 	)
 
 	if use elibc_musl; then
